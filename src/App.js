@@ -18,6 +18,9 @@ function App() {
     if (shareBase) {
       shareBase(data);
     }
+    if (navigator.share) {
+      navigator.share(data);
+    }
   }
   const style = { background: onSeto ? "red" : "green", color: "white" };
 
