@@ -4,7 +4,7 @@ import { Button, Text } from "react-native-elements";
 import "./App.css";
 
 function App() {
-  function onClick() {
+  function onPress() {
     const data = {
       title: "afkasd",
       url: "http://localhost:3000/",
@@ -25,7 +25,7 @@ function App() {
   };
 
   const resso = {
-    onClick,
+    onPress,
     title: "here's how you click react",
   };
 
