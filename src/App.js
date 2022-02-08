@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "react-native-elements";
+import { Button, Text } from "react-native-elements";
 
 import "./App.css";
 
@@ -12,11 +12,17 @@ function App() {
     };
 
     const shareBase = window.navigator.share;
-    console.log(data, "data");
+    console.log({ data, shareBase });
     if (shareBase) {
       shareBase(data);
     }
   }
+
+  const textocon = {
+    style: { background: "red", color: "white" },
+    // h1:true
+    children: "here's some text",
+  };
 
   const resso = {
     onClick,
@@ -40,6 +46,8 @@ function App() {
       <div className="App">
         <header className="App-header">
           <Button {...resso} />
+          <hr style={{ margin: "2% 0", width: "100%" }} />
+          <Text {...textocon} />
         </header>
       </div>
     </>
