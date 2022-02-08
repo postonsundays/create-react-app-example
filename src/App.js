@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Text } from "react-native-elements";
 
 import "./App.css";
 
 function App() {
+  const [onSeto, setonSeto] = useState();
   function onPress() {
     const data = {
       title: "afkasd",
@@ -13,18 +14,22 @@ function App() {
 
     const shareBase = window.navigator.share;
     console.log({ data, shareBase });
+    setonSeto(!onSeto);
     if (shareBase) {
       shareBase(data);
     }
   }
+  const style = { background: onSeto ? "red" : "green", color: "white" };
 
   const textocon = {
-    style: { background: "red", color: "white" },
+    style,
     // h1:true
     children: "here's some text",
   };
 
   const resso = {
+    // containerStyle: style,
+    buttonStyle: style,
     onPress,
     title: "here's how you click react",
   };
